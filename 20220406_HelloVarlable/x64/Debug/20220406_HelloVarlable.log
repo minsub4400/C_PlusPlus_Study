@@ -1,0 +1,4 @@
+﻿  20220406_HelloVarlable.cpp
+C:\Users\KGA_10\Desktop\SMS(Metaverse)\C-Study\20220406_HelloVarlable\20220406_HelloVarlable.cpp(58,12): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'std::string'입니다.
+C:\Users\KGA_10\Desktop\SMS(Metaverse)\C-Study\20220406_HelloVarlable\20220406_HelloVarlable.cpp(58,12): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'std::string'입니다.
+  20220406_HelloVarlable.vcxproj -> C:\Users\KGA_10\Desktop\SMS(Metaverse)\C-Study\20220406_HelloVarlable\x64\Debug\20220406_HelloVarlable.exe
