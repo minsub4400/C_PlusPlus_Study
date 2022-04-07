@@ -1,60 +1,98 @@
-﻿
+//●연산자
+//데이터를 가공(연산)하는 모든 명령에 필요한 것들
+//1)어떤 종류의 연산자들이 있는지 ?
+//2)연산자들의 우선순위
+//3)결합 순서 : 좌측부터 연산하는 연사자, 우측부터 연산하는 연산자
+//
+//1. 사칙연산 : 산술연산자(좌측부터 연산)
+//+ : 더하기
+//- : 뺴기
+//* : 곱하기
+/// : 나누기 11 / 3 = > 3
+//% : 나머지 11 / 3 = > 2
+//우선순위 :*, / , % > +, -
+//정수와 0을 나누게 되면 런타임에러, 잘못 된 메모리 주소 호출로 값이 출력되지 않는다.
+//
+//2. 대입연산자(우측부터 연산)
+//= : 왼쪽 항에 오른쪽 항의 값을 대입한다.
+//
+//3. 복합 대입 연산자(변수의 값이 변경된다.)
+//+= : a += b; = > a = a + b;
+//-= : a -= b; = > a = a - b;
+//*= : a *= b; = > a = a * b;
+///= : a /= b; = > a = a / b;
+//%= : a %= b; = > a = a % b; (a와 b는 정수형 타입이어야 한다.)
+//
+//4. 증감연산자
+//특정 변수의 값을 1씩 증가시키거나 감소시킬 때 사용한다.
+//변수의 앞이나 뒤에++ / --를 붙여서 사용한다.
+//
+//5. 관계연산자
+//두 값을 비교한 결과가 참인지 거짓인지 반환하는 연산자(참 / true = 1 or 거짓 / false = 0)
+//a < b : 왼 쪽항의 값이 오른쪽 항의 값보다 "작으면" 참(1, true) 반환
+//    a > b : 왼 쪽항의 값이 오른쪽 항의 값보다 "크면" 참(1, true) 반환
+//    a <= b : 왼 쪽항의 값이 오른쪽 항의 값보다 "작거나 같으면" 참(1, true) 반환
+//    a >= b : 왼 쪽항의 값이 오른쪽 항의 값보다 "크거나 같으면" 참(1, true) 반환
+//    a == b : 왼 쪽항의 값이 오른쪽 항의 값과 "같으면" 참(1, true) 반환
+//    a != b : 왼 쪽항의 값이 오른쪽 항의 값과 "다르면" 참(1, true) 반환
+
 #include <iostream>
-using namespace std;
-#include <string>
+    using namespace std;
+
 
 int main()
 {
-    // 변수
-    /*
-        1).이름 : Num
-        2).값 : 2.8
-        3).메모리주소 : 0000003AC8B8F6E4
-        4).크기 : 4Byte
-    */
-    //float Num = 2.8f;  //부동 소수점, 값 뒤에 f(4Byte, 실수형이라고 표시를 해주어야 한다)
-    //double Num2 = 2.8; //f를 적지않으면 double형으로 인식을 한다(15자리 까지 인식을 하기때문에 메모리를 더 사용하게 됨)
+    int left_value = 22;
+    int right_value = 2;
 
-    //cout << "float : " << Num << "\n";
-    //cout << "float 크기 : " << sizeof(Num) <<"Byte" << "\n";
-    //cout << "float 메모리주소 : " << &Num << "\n"; //메모리 주소 확인 "&변수" (16자리수/0~F/16진수)
-    //cout << "double : " << Num << "\n";
+    //사칙연산자
+    cout << "+ : " << left_value + right_value << endl;
+    cout << "- : " << left_value - right_value << endl;
+    cout << "* : " << left_value * right_value << endl;
+    cout << "/ : " << left_value / right_value << endl;
+    cout << "% : " << left_value % right_value << endl;
 
-    //실습 1. 상대방 이름과 내 이름, 상대방 나이를 입력 받아서 축하메세지를 출력하는 프로그램을 만들어보자.
-    //결과
-    /*상대방 이름을 입력하세요.
-        홍길동
-    본인의 이름을 입력하세요.
-        김사또
-    상대방 나이를 입력하세요.
-        22
-    홍길동 : 김사또님 22살 생일을 축하합니다.*/
+    cout << "\n";
 
-    string Name1;
-    string Name2;
-    int Age;
-    /*
-                변수명 이름 규칙
-                1. C++ 에서 이미 "정의"되어있는 키워드들은 변수명으로 사용할 수 없다.
-                2. 알파벳, 숫자, _ 로 만 구성할 수 있다.
-                 단, 숫자로 시작할 수는 없다.
-                3. 대/소문자 구분을 한다.
-                4. 변수명 사이에 띄어쓰기를 넣을 수 없다.
-                5. 전부 소문자로 작성한다.
-                6. 축약어를 쓰지 않는다.
-                
-                헝가리안 표기법
-                카멜 표기법
-                차이점, 언제 사용하면 좋을지, 무엇인지
-    */
-    cout << "상대방 이름을 입력해주세요." << endl;
-    cin >> Name1;
-    cout << "본인의 이름을 입력해주세요." << endl;
-    cin >> Name2;
-    cout << "상대의 나이를 입력해주세요." << endl;
-    cin >> Age;
+    //복합연산자
+    left_value += right_value;
+    cout << "+ : " << left_value << endl;
+    left_value -= right_value;
+    cout << "- : " << left_value << endl;
+    cout << "* : " << (left_value *= right_value) << endl;
+    cout << "/ : " << (left_value /= right_value) << endl;
+    cout << "% : " << (left_value %= right_value) << endl;
 
-    //cout << Name1 << " : " << Name2 << "님 " << Age << "살 생일을 축하합니다." << endl;
-    printf("%s : %s님 %d살 생일을 축하합니다.", Name1, Name2, Age);
+    //증감연산자
+    left_value = 10;
+    right_value = 10;
+    //left_value++;
+    cout << ++left_value << endl; // 출력 : 12, 메모리 : 12
+    //++right_value;
+    cout << right_value++ << endl; // 출력 : 11, 메모리 : 12
 
+    cout << "\n";
+
+    //관계연산자
+
+        /*실습.
+        1. 고객의 나이를 입력받아서 미성년자(19세이하)면 true를 출력, 성인이면 false를 출력
+        2. 아까 입력 받은 나이를 기준으로, 주민등록증 발급대상(20살만)이면 true를 아니면 false를 출력
+        3. 입력받은 나이가 아홉수(1 ~ 9)인지 확인해서 true, false를 출력*/
+
+    int age;
+    bool a;
+
+    cout << boolalpha; //관계연산자로 나온 0, 1를 True, False로 나타내어준다.
+
+    cout << "나이 입력" << endl;
+    cin >> age;
+    a = age > 19; //age와 19를 비교하여 a변수에 0 or 1를 넣어 출력한다.
+    cout << a << endl;
+
+    a = age == 20;
+    cout << a << endl; //age와 20를 비교하여 a변수에 0 or 1를 넣어 출력한다.
+
+    a = (age % 10) == 9; //10으로 나누어 떨어지는 값이 9이면 된다.
+    cout << a << endl;
 }
