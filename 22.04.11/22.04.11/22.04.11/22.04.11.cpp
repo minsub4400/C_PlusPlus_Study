@@ -1,6 +1,4 @@
 ﻿#include <iostream>
-#include <stdint.h>
-#include <time.h>
 
 using namespace std;
 
@@ -34,29 +32,37 @@ int main(void)
 {   
     srand(time(NULL));
     // 실습1. 3 ~ 7 사이의 랜덤한 숫자를 출력하는 프로그램을 작성하자.(3, 7 포함)
-    cout << "실습1 : " << rand() % (3, 7) << endl;
+    cout << "#####실습1#####" << endl;
+    cout << rand() % 5 + 3 << endl;
+    cout << "###############" << endl << endl;
 
     // 실습2. 가장 작은 값과 큰 값을 입력받아서, 그 사이의 임의의 값을 출력하는 프로그램을 작성하자.
-    int prectice2_1;
-    int prectice2_2;
+    int practice2_1;
+    int practice2_2;
+    cout << "#####실습2#####" << endl;
     cout << "작은 숫자를 입력해주세요 : ";
-    cin >> prectice2_1;
+    cin >> practice2_1;
     cout << "큰 숫자를 입력해주세요 : ";
-    cin >> prectice2_2;
-    cout << "실습2 : " << rand() % (prectice2_1, prectice2_2) << endl;
-
+    cin >> practice2_2;
+    cout << "숫자 범위는 " << practice2_1 << "부터 " << (practice2_2 - practice2_1) + practice2_1 << "까지입니다." << endl;
+    cout << rand() % (practice2_2 - practice2_1) + practice2_1 << endl;
+    cout << "###############" << endl << endl;
+    
     // 실습3. 프로그램을 실행하면 내부적으로 1 ~ 10 사이의 숫자가 정답으로 정해진다. 
     //          유저가 1 ~ 10 사이의 숫자를 입력하면 맞으면 true, 틀리면 false를 출력한다.
     int prectice3 = rand() % 10 + 1;
     int input;
-    cout << "실습 3" << endl;
+    cout << boolalpha;
+    cout << "#####실습3#####" << endl;
     cout << "1 ~ 10 사이의 숫자를 입력해주세요 : ";
     cin >> input;
-    cout << (input == prectice3) << "True" << endl;
-    cout << (input != prectice3) << "False" << endl;
+    cout << (input == prectice3) << endl;
+    cout << "###############" << endl << endl;
 
-
-    
+    //과제
+    cout << "rand() 함수의 데이터크기" << endl;
+    cout << "rand() 함수의 데이터크기는" << sizeof(rand()) << "Byte 입니다." << endl;
+    cout << "즉, int와 같으며 0~32767사이의 값을 반환합니다." << endl;
 
     return 0;
 }
