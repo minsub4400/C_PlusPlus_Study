@@ -33,7 +33,7 @@ int main(void)
     srand(time(NULL));
     // 실습1. 3 ~ 7 사이의 랜덤한 숫자를 출력하는 프로그램을 작성하자.(3, 7 포함)
     cout << "#####실습1#####" << endl;
-    cout << rand() % 5 + 3 << endl;
+    cout << rand() % (4 + 1) + 3 << endl; // 5 ~ 10
     cout << "###############" << endl << endl;
 
     // 실습2. 가장 작은 값과 큰 값을 입력받아서, 그 사이의 임의의 값을 출력하는 프로그램을 작성하자.
@@ -47,7 +47,7 @@ int main(void)
     cout << "숫자 범위는 " << practice2_1 << "부터 " << (practice2_2 - practice2_1) + practice2_1 << "까지입니다." << endl;
     cout << rand() % (practice2_2 - practice2_1) + practice2_1 << endl;
     cout << "###############" << endl << endl;
-    
+
     // 실습3. 프로그램을 실행하면 내부적으로 1 ~ 10 사이의 숫자가 정답으로 정해진다. 
     //          유저가 1 ~ 10 사이의 숫자를 입력하면 맞으면 true, 틀리면 false를 출력한다.
     int prectice3 = rand() % 10 + 1;
