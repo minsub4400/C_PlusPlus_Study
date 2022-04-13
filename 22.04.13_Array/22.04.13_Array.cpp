@@ -32,16 +32,11 @@
               cout << (int)input_key_char << endl;
 */
 #include <iostream>
-#include <string>
 #include <conio.h>
 using namespace std;
 
 int main()
-{
-    cout << 1;
-    int name;
-    cin >> name;
-   
+{   
     //int nums[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     //cout << nums << endl; //메모리 주소가 출력됨.
@@ -215,20 +210,46 @@ int main()
     ##########
 */
     srand(time(NULL));
-    int map[10][10];
-    char player = 'P';
-    char escape = 'E';
+    char map[10][10];
+    int key = _getch();
 
-    for (int map1 = 0; map1 < 10; map1++) {      //맵 구성
-        for (int map2 = 0; map2 < 10; map2++) {
-            cout << "#";
-            
+    while (true)
+    {
+        map[0][0] = 'P';
+        map[rand() % 10][rand() % 10] = 'E';
+
+        for (char map1 = 0; map1 < 10; map1++)
+        {
+            for (char map2 = 0; map2 < 10; map2++)
+            {
+                map[map1][map2] = '#';
+                cout << map[map1][map2];
+
+                switch (key)
+                {
+                case 119:   //w
+                    map[0 - 1][0] = 'P';
+                    break;
+                case 97:    //a
+                    map[0][0 - 1] = 'P';
+                    break;
+                case 115:   //s
+                    map[0 + 1][0] = 'P';
+                    break;
+                case 100:   //d
+                    map[0][0 + 1] = 'P';
+                    break;
+                default:
+                    break;
+                }
+            }
+            cout << endl;
         }
-        //cout << "";
-        //cout << "ㅇㄴㅁㅇㄴㅇㄴ" << endl;
+
+        system("cls");
     }
-    
-    
+
+    //cout << map[0][0];
     
 #pragma endregion 
 
