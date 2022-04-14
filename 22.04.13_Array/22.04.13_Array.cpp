@@ -84,53 +84,6 @@ int main()
     //    cout << student_num << "번째 학생의 이름은 " << student[student_num - 1] << "입니다.";
 #pragma endregion
 
-#pragma region    //배열 실습2.
-   /*
-    구구단의 결과를 저장하는 2차원 배열을 하나 선언한다.
-    이중 for문을 이용해서 배열 변수에 구구단의 결과 값을 저장하고 두 수를 입력받아서 적합한 결과값을 출력해보자.
-
-    예시)
-        (결과 저장 완료)
-        몇 단을 볼까요? : _4
-        몇을 곱할까요? : _7
-        4 x 7 = 28
-    */
-
-    //int gugudan[8][9];
-    //int dan;
-    //int su;
-
-    //for (int i = 0; i < 8; i++) //단수
-    //{   
-    //    for (int j = 0; j < 9; j++) //수
-    //    {
-    //        
-    //        gugudan[i][j] = (i + 2) * (j + 1);
-    //        //cout << gugudan[i][j] << endl;
-    //    }
-    //}
-    //cout << "몇 단을 볼까요? : ";
-    //cin >> dan;
-    //cout << "몇을 곱할까요? : ";
-    //cin >> su;
-    //cout << dan << " x " << su << " = " << gugudan[dan - 2][su - 1];
-#pragma endregion
-
-//달팽이
-    //int arry[4][4];
-    //
-    //for (int i = 0; i < 4; i++)
-    //{
-    //    for (int j = 0; j < 4; j++)
-    //    {
-    //        for (int k = 0; k <= 16; k++)
-    //        {
-    //            arry[i][j] = k + 1;
-    //            cout << arry[i][j];
-    //        }
-    //    }
-    //}
-
 #pragma region    //ASCII코드와 _getch(); 실습
     /*
     A ~ Z 키 중에 하나를 정답으로 설정한다.
@@ -209,47 +162,97 @@ int main()
     ##########
     ##########
 */
-    srand(time(NULL));
-    char map[10][10];
-    int key = _getch();
+    //srand(time(NULL));
+    //char map[10][10];
+    //int key;
+    //int player_x = 0; //플레이어 x 위치
+    //int player_y = 0; //플레이어 y 위치
+    //int exit_x = rand() % 9 + 1;   //탈출 x 위치, 9 + 1 하는 이유는 0, 0 를 제외한 조건이 있기 때문
+    //int exit_y = rand() % 9 + 1;   //탈출 y위치
+    //char player = 'P';
+    //char escape = 'E';
 
-    while (true)
-    {
-        map[0][0] = 'P';
-        map[rand() % 10][rand() % 10] = 'E';
+    //while (true)
+    //{   
+    //    //탈출 지점과 플레이어 지점 비교
+    //    if (player_x == exit_x && player_y == exit_y)
+    //    {
+    //        cout << "탈출에 성공하였습니다.";
+    //        break;
+    //    }
 
-        for (char map1 = 0; map1 < 10; map1++)
-        {
-            for (char map2 = 0; map2 < 10; map2++)
-            {
-                map[map1][map2] = '#';
-                cout << map[map1][map2];
+    //    //맵 구성
+    //    for (char map1 = 0; map1 < 10; map1++)
+    //    {
+    //        for (char map2 = 0; map2 < 10; map2++)
+    //        {
+    //            map[map1][map2] = '#';
+    //        }
+    //    }
 
-                switch (key)
-                {
-                case 119:   //w
-                    map[0 - 1][0] = 'P';
-                    break;
-                case 97:    //a
-                    map[0][0 - 1] = 'P';
-                    break;
-                case 115:   //s
-                    map[0 + 1][0] = 'P';
-                    break;
-                case 100:   //d
-                    map[0][0 + 1] = 'P';
-                    break;
-                default:
-                    break;
-                }
-            }
-            cout << endl;
-        }
+    //    //플레이어
+    //    map[player_x][player_y] = player;
 
-        system("cls");
-    }
+    //    //탈출구
+    //    map[exit_x][exit_y] = escape;
 
-    //cout << map[0][0];
+    //    cout << "탈출 좌표 x, y : " << exit_x << ", " << exit_y << endl;
+    //    cout << "플레이어 좌표 x, y : " << player_x << ", " << player_y << endl;
+
+    //    //출력 부분 ★★★출력 구문을 따로 둘 수 있다는 것!!!
+    //    for (char map1 = 0; map1 < 10; map1++)
+    //    {
+    //        for (char map2 = 0; map2 < 10; map2++)
+    //        {
+    //            cout << map[map1][map2];
+    //        }
+    //        cout << endl;
+    //    }
+
+    //    // 키 움직임
+    //    switch (_getch())
+    //    {
+    //    case 'w':   //w : 119
+    //        player_x -= 1;
+    //        if (player_x < 0)
+    //        {
+    //            player_x = 0;
+
+    //        }
+    //        break;
+
+    //    case 'a':    //a : 97
+    //        player_y -= 1;
+    //        if (player_y < 0)
+    //        {
+    //            player_y = 0;
+
+    //        }
+    //        break;
+
+    //    case 's':   //s : 112
+    //        player_x += 1;
+    //        if (player_x > 9)
+    //        {
+    //            player_x = 9;
+
+    //        }
+    //        break;
+
+    //    case 'd':   //d : 100
+    //        player_y += 1;
+    //        if (player_y > 9)
+    //        {
+    //            player_y = 9;
+
+    //        }
+    //        break;
+
+    //    default:
+    //        break;
+    //    }
+    //    system("cls");
+    //}
     
 #pragma endregion 
 
