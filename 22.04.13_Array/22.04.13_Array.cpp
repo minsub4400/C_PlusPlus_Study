@@ -162,97 +162,97 @@ int main()
     ##########
     ##########
 */
-    //srand(time(NULL));
-    //char map[10][10];
-    //int key;
-    //int player_x = 0; //플레이어 x 위치
-    //int player_y = 0; //플레이어 y 위치
-    //int exit_x = rand() % 9 + 1;   //탈출 x 위치, 9 + 1 하는 이유는 0, 0 를 제외한 조건이 있기 때문
-    //int exit_y = rand() % 9 + 1;   //탈출 y위치
-    //char player = 'P';
-    //char escape = 'E';
+    srand(time(NULL));
+    char map[30][30];
+    int key;
+    int player_x = 0; //플레이어 x 위치
+    int player_y = 0; //플레이어 y 위치
+    int exit_x = rand() % 29 + 1;
+    int exit_y = rand() % 29 + 1;
+    char player = 'P';
+    char escape = 'E';
 
-    //while (true)
-    //{   
-    //    //탈출 지점과 플레이어 지점 비교
-    //    if (player_x == exit_x && player_y == exit_y)
-    //    {
-    //        cout << "탈출에 성공하였습니다.";
-    //        break;
-    //    }
+    while (true)
+    {   
+        //탈출 지점과 플레이어 지점 비교
+        if (player_x == exit_x && player_y == exit_y)
+        {
+            cout << "탈출에 성공하였습니다.";
+            break;
+        }
 
-    //    //맵 구성
-    //    for (char map1 = 0; map1 < 10; map1++)
-    //    {
-    //        for (char map2 = 0; map2 < 10; map2++)
-    //        {
-    //            map[map1][map2] = '#';
-    //        }
-    //    }
+        //맵 구성_1
+        for (char map1 = 0; map1 < 30; map1++)
+        {
+            for (char map2 = 0; map2 < 30; map2++)
+            {
+                map[map1][map2] = '#';
+            }
+        }
 
-    //    //플레이어
-    //    map[player_x][player_y] = player;
+        //플레이어
+        map[player_x][player_y] = player;
 
-    //    //탈출구
-    //    map[exit_x][exit_y] = escape;
+        //탈출구
+        map[exit_x][exit_y] = escape;
 
-    //    cout << "탈출 좌표 x, y : " << exit_x << ", " << exit_y << endl;
-    //    cout << "플레이어 좌표 x, y : " << player_x << ", " << player_y << endl;
+        //출력 부분 ★★★출력 구문을 따로 둘 수 있다는 것!!!
+        for (char map1 = 0; map1 < 30; map1++)
+        {
+            for (char map2 = 0; map2 < 30; map2++)
+            {
+                cout << map[map1][map2];
+            }
+            cout << endl;
+        }
 
-    //    //출력 부분 ★★★출력 구문을 따로 둘 수 있다는 것!!!
-    //    for (char map1 = 0; map1 < 10; map1++)
-    //    {
-    //        for (char map2 = 0; map2 < 10; map2++)
-    //        {
-    //            cout << map[map1][map2];
-    //        }
-    //        cout << endl;
-    //    }
+        cout << "탈출 좌표 x, y : " << exit_x << ", " << exit_y << endl;
+        cout << "플레이어 좌표 x, y : " << player_x << ", " << player_y << endl;
 
-    //    // 키 움직임
-    //    switch (_getch())
-    //    {
-    //    case 'w':   //w : 119
-    //        player_x -= 1;
-    //        if (player_x < 0)
-    //        {
-    //            player_x = 0;
+        // 키 움직임
+        switch (_getch())
+        {
+        case 'w':   //w : 119
+            player_x -= 1;
+            if (player_x < 0)
+            {
+                player_x = 0;
 
-    //        }
-    //        break;
+            }
+            break;
 
-    //    case 'a':    //a : 97
-    //        player_y -= 1;
-    //        if (player_y < 0)
-    //        {
-    //            player_y = 0;
+        case 'a':    //a : 97
+            player_y -= 1;
+            if (player_y < 0)
+            {
+                player_y = 0;
 
-    //        }
-    //        break;
+            }
+            break;
 
-    //    case 's':   //s : 112
-    //        player_x += 1;
-    //        if (player_x > 9)
-    //        {
-    //            player_x = 9;
+        case 's':   //s : 112
+            player_x += 1;
+            if (player_x > 29)
+            {
+                player_x = 29;
 
-    //        }
-    //        break;
+            }
+            break;
 
-    //    case 'd':   //d : 100
-    //        player_y += 1;
-    //        if (player_y > 9)
-    //        {
-    //            player_y = 9;
+        case 'd':   //d : 100
+            player_y += 1;
+            if (player_y > 29)
+            {
+                player_y = 29;
 
-    //        }
-    //        break;
+            }
+            break;
 
-    //    default:
-    //        break;
-    //    }
-    //    system("cls");
-    //}
+        default:
+            break;
+        }
+        system("cls");
+    }
     
 #pragma endregion 
 
